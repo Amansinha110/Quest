@@ -109,7 +109,7 @@ const StorylineSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
             Tales from the Abyss
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -147,14 +147,14 @@ const StorylineSection = () => {
                   <Card
                     className={`bg-black/50 border-2 transition-all duration-300 ${
                       isSelected
-                        ? "border-purple-500 shadow-lg shadow-purple-500/20"
-                        : "border-gray-700 hover:border-purple-500/50"
+                        ? "border-red-500 shadow-lg shadow-red-500/20"
+                        : "border-gray-700 hover:border-red-500/50"
                     }`}
                   >
                     <CardContent className="p-4">
                       <div className="flex items-center space-x-3 mb-2">
                         <div
-                          className={`w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center ${
+                          className={`w-10 h-10 rounded-full bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-center ${
                             isSelected ? "pulse-glow" : ""
                           }`}
                         >
@@ -168,7 +168,7 @@ const StorylineSection = () => {
                             {chapter.themes.map((theme, themeIndex) => (
                               <span
                                 key={themeIndex}
-                                className="text-xs bg-purple-500/20 text-purple-300 px-2 py-1 rounded"
+                                className="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded"
                               >
                                 {theme}
                               </span>
@@ -192,11 +192,11 @@ const StorylineSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-lg p-8 border border-purple-500/30"
+            className="bg-gradient-to-r from-red-900/30 to-pink-900/30 rounded-lg p-8 border border-red-500/30"
           >
             <div className="flex items-center space-x-4 mb-6">
               {React.createElement(storyChapters[selectedChapter].icon, {
-                className: "w-8 h-8 text-purple-400",
+                className: "w-8 h-8 text-red-400",
               })}
               <h3 className="text-3xl font-bold text-white">
                 {storyChapters[selectedChapter].title}
@@ -226,16 +226,14 @@ const StorylineSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-purple-500/20"
+                className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-red-500/20"
               >
                 <div className="text-center mb-4">
                   <div className="text-4xl mb-2">{character.image}</div>
                   <h4 className="text-xl font-bold text-white">
                     {character.name}
                   </h4>
-                  <p className="text-purple-400 font-semibold">
-                    {character.role}
-                  </p>
+                  <p className="text-red-400 font-semibold">{character.role}</p>
                 </div>
                 <p className="text-gray-400 text-center">
                   {character.description}
@@ -250,7 +248,7 @@ const StorylineSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-center bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-lg p-8 border border-purple-500/20"
+          className="text-center bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-lg p-8 border border-red-500/20"
         >
           <h3 className="text-3xl font-bold text-white mb-4">Core Themes</h3>
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -261,9 +259,9 @@ const StorylineSection = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-purple-500/20 rounded-lg p-4"
+                  className="bg-red-500/20 rounded-lg p-4"
                 >
-                  <h4 className="text-lg font-semibold text-purple-300">
+                  <h4 className="text-lg font-semibold text-red-300">
                     {theme}
                   </h4>
                 </motion.div>
