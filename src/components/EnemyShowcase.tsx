@@ -1,8 +1,8 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skull, Zap, Shield, Clock, Crown, Eye } from "lucide-react";
-import { useState } from "react";
 
 const EnemyShowcase = () => {
   const [selectedEnemy, setSelectedEnemy] = useState<number>(0);

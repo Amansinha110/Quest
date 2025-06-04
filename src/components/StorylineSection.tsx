@@ -1,7 +1,7 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Clock, Zap, Skull, Crown, Heart, Star } from "lucide-react";
-import { useState } from "react";
 
 const StorylineSection = () => {
   const [selectedChapter, setSelectedChapter] = useState<number>(0);

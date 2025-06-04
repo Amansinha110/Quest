@@ -1,8 +1,8 @@
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, Mountain, Building2, Zap, TreePine, Waves } from "lucide-react";
-import { useState } from "react";
 
 const WorldGallery = () => {
   const [selectedLocation, setSelectedLocation] = useState<number>(0);
