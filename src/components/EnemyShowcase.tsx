@@ -171,7 +171,7 @@ const EnemyShowcase = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
             Denizens of the Deep
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -284,7 +284,7 @@ const EnemyShowcase = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-red-900/30 to-orange-900/30 rounded-lg p-8 border border-red-500/30 mb-16"
+          className="bg-gradient-to-r from-red-900/30 to-pink-900/30 rounded-lg p-8 border border-red-500/30 mb-16"
         >
           <div className="flex items-center space-x-4 mb-6">
             {React.createElement(enemies[selectedEnemy].icon, {
@@ -323,13 +323,13 @@ const EnemyShowcase = () => {
 
             <div>
               <h4 className="text-white font-semibold mb-3 flex items-center">
-                <Shield className="w-4 h-4 mr-2 text-green-400" />
+                <Shield className="w-4 h-4 mr-2 text-pink-400" />
                 Weaknesses
               </h4>
               <div className="space-y-2">
                 {enemies[selectedEnemy].weaknesses.map((weakness, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full" />
+                    <div className="w-2 h-2 bg-pink-400 rounded-full" />
                     <span className="text-gray-300 text-sm">{weakness}</span>
                   </div>
                 ))}
@@ -338,13 +338,13 @@ const EnemyShowcase = () => {
 
             <div>
               <h4 className="text-white font-semibold mb-3 flex items-center">
-                <Clock className="w-4 h-4 mr-2 text-blue-400" />
+                <Clock className="w-4 h-4 mr-2 text-rose-400" />
                 Variants
               </h4>
               <div className="space-y-2">
                 {enemies[selectedEnemy].variants.map((variant, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full" />
+                    <div className="w-2 h-2 bg-rose-400 rounded-full" />
                     <span className="text-gray-300 text-sm">{variant}</span>
                   </div>
                 ))}
@@ -352,10 +352,8 @@ const EnemyShowcase = () => {
             </div>
           </div>
 
-          <div className="bg-black/30 rounded-lg p-4 border border-orange-500/20">
-            <h4 className="text-orange-400 font-semibold mb-2">
-              Combat Tactics
-            </h4>
+          <div className="bg-black/30 rounded-lg p-4 border border-pink-500/20">
+            <h4 className="text-pink-400 font-semibold mb-2">Combat Tactics</h4>
             <p className="text-gray-300 text-sm">
               {enemies[selectedEnemy].tactics}
             </p>
