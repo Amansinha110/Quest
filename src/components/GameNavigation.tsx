@@ -27,7 +27,7 @@ const GameNavigation = ({
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-cyan-500/20"
+      className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-red-500/20"
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
@@ -36,7 +36,7 @@ const GameNavigation = ({
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-r from-red-400 to-pink-500 rounded-full flex items-center justify-center">
               <Waves className="w-5 h-5 text-white" />
             </div>
             <span className="text-xl font-bold text-white">Depth Survivor</span>
@@ -53,7 +53,7 @@ const GameNavigation = ({
                   onClick={() => onSectionChange(item.id)}
                   className={`relative group ${
                     currentSection === item.id
-                      ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white"
+                      ? "bg-gradient-to-r from-red-500 to-pink-500 text-white"
                       : "text-gray-300 hover:text-white hover:bg-white/10"
                   }`}
                 >
@@ -62,7 +62,7 @@ const GameNavigation = ({
                   {currentSection === item.id && (
                     <motion.div
                       layoutId="activeTab"
-                      className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-md -z-10"
+                      className="absolute inset-0 bg-gradient-to-r from-red-500/20 to-pink-500/20 rounded-md -z-10"
                       transition={{
                         type: "spring",
                         stiffness: 400,
@@ -127,7 +127,7 @@ const GameNavigation = ({
                       }}
                       className={`w-full justify-start ${
                         currentSection === item.id
-                          ? "bg-gradient-to-r from-cyan-500 to-purple-500 text-white"
+                          ? "bg-gradient-to-r from-red-500 to-pink-500 text-white"
                           : "text-gray-300 hover:text-white hover:bg-white/10"
                       }`}
                     >
