@@ -49,7 +49,7 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
         {[...Array(50)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+            className="absolute w-1 h-1 bg-red-400 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -81,7 +81,7 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
             className="text-6xl md:text-8xl font-bold mb-6 text-glow"
             animate={controls}
           >
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-red-400 via-pink-500 to-rose-600 bg-clip-text text-transparent">
               Depth Survivor
             </span>
           </motion.h1>
@@ -120,7 +120,7 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
             <Button
               size="lg"
               onClick={() => onNavigate("demo")}
-              className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold px-8 py-4 text-lg pulse-glow"
+              className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-semibold px-8 py-4 text-lg pulse-glow"
             >
               <Play className="w-5 h-5 mr-2" />
               Experience the Demo
@@ -129,7 +129,7 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
               size="lg"
               variant="outline"
               onClick={() => onNavigate("story")}
-              className="border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 font-semibold px-8 py-4 text-lg"
+              className="border-red-500 text-red-400 hover:bg-red-500/10 font-semibold px-8 py-4 text-lg"
             >
               Discover the Story
             </Button>
@@ -148,10 +148,10 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
                 <motion.div
                   key={feature.title}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/20 floating"
+                  className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-red-500/20 floating"
                   style={{ animationDelay: `${index * 0.5}s` }}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">
@@ -174,12 +174,12 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-cyan-400 rounded-full flex justify-center"
+            className="w-6 h-10 border-2 border-red-400 rounded-full flex justify-center"
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-cyan-400 rounded-full mt-2"
+              className="w-1 h-3 bg-red-400 rounded-full mt-2"
             />
           </motion.div>
         </motion.div>
