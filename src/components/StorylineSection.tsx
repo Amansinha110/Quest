@@ -1,100 +1,101 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Zap, Skull, Crown, Heart, Star } from "lucide-react";
+import { Waves, Zap, Skull, Crown, Heart, Star } from "lucide-react";
 
 const StorylineSection = () => {
   const [selectedChapter, setSelectedChapter] = useState<number>(0);
 
   const storyChapters = [
     {
-      title: "The Shattered Moment",
-      icon: Clock,
-      description: "The Great Temporal Cascade has fractured reality itself.",
+      title: "The Great Submersion",
+      icon: Waves,
+      description: "Climate catastrophe forces humanity beneath the waves.",
       content:
-        "In the year 2087, the Chronos Institute's ambitious experiment to create a universal temporal anchor goes catastrophically wrong. The resulting explosion doesn't just destroy the facility—it shatters time itself across multiple dimensions. You are Dr. Elena Vasquez, the last surviving Chronarch, awakening in a world where past, present, and future exist simultaneously in chaotic fragments.",
-      themes: ["Discovery", "Loss", "Responsibility"],
+        "In the year 2087, rising seas and climate disasters have made the surface world uninhabitable. You are Alex Chen, a marine engineer who witnessed the final evacuation of the last surface city. As the water levels rise beyond all projections, scattered groups of survivors must quickly adapt to life beneath the ocean. With limited supplies and hostile waters, every decision determines who lives and who becomes another casualty of the depths.",
+      themes: ["Survival", "Adaptation", "Loss"],
     },
     {
-      title: "Echoes of the Past",
+      title: "Relics of the Surface",
       icon: Star,
-      description: "Uncover the truth behind the Temporal Cascade.",
+      description: "Discover remnants of lost civilizations.",
       content:
-        "As you explore the fractured timeline, you encounter temporal echoes—ghostly imprints of people and events that replay endlessly. Among them, you discover messages from your mentor, Professor Chen, who foresaw the disaster. His encrypted temporal recordings reveal a conspiracy within the Institute and hint at the true cause of the cascade: sabotage by a faction seeking to weaponize time itself.",
-      themes: ["Mystery", "Betrayal", "Truth"],
+        "As you explore the flooded ruins of once-great cities, you uncover evidence of humanity's former glory and folly. Submerged libraries, underwater museums, and drowned metropolises hold technological secrets and historical warnings. Among these ruins, you find messages from other survivor groups and discover that some communities have thrived in underwater havens, developing new technologies and ways of life.",
+      themes: ["Discovery", "History", "Hope"],
     },
     {
-      title: "The Time Wraiths",
+      title: "The Deep Predators",
       icon: Skull,
-      description: "Face enemies born from temporal corruption.",
+      description: "Face creatures adapted to the new world order.",
       content:
-        "Your investigation attracts the attention of Time Wraiths—beings created from the temporal energy released during the cascade. These entities exist outside normal time flow and seek to consume temporal energy, making them your natural enemy. Led by the Paradox King, a former Chronarch corrupted by exposure to raw temporal force, they hunt you across multiple timelines.",
-      themes: ["Conflict", "Corruption", "Survival"],
+        "The ocean depths hide more than ruins—they're home to creatures that have evolved rapidly in the changed ecosystem. Mutated sea life, bio-engineered predators from failed experiments, and ancient deep-sea monsters now roam the waters. These creatures see humanity as invaders in their domain, and they've learned to hunt in packs, using the underwater terrain to their advantage.",
+      themes: ["Danger", "Evolution", "Territory"],
     },
     {
-      title: "The Temporal Resistance",
+      title: "The Depth Colonies",
       icon: Heart,
-      description: "Allies emerge from the chaos of broken time.",
+      description: "Find community among fellow survivors.",
       content:
-        "In scattered pockets of stable time, you discover other survivors: Maya, a brilliant engineer trapped in a temporal loop until you free her; Kai, a former security officer whose aging was reversed by temporal exposure; and ARIA, an AI that achieved consciousness during the cascade. Together, you form the Temporal Resistance, working to restore the timeline while uncovering the truth.",
-      themes: ["Hope", "Unity", "Friendship"],
+        "In the deepest trenches, you discover thriving underwater colonies built by survivors who've mastered aquatic life. Led by visionaries like Marina Santos, a former oceanographer, and Captain Rex Torres, an ex-military submarine commander, these communities have developed sustainable underwater agriculture, advanced diving technology, and defensive systems against deep-sea threats.",
+      themes: ["Community", "Innovation", "Cooperation"],
     },
     {
-      title: "The Architect's Plan",
+      title: "The Rogue Faction",
       icon: Crown,
-      description: "Confront the mastermind behind the cascade.",
+      description: "Confront those who exploit the chaos for power.",
       content:
-        "Your investigation leads to Dr. Marcus Blackwood, the Institute's former director who orchestrated the cascade to become the supreme ruler of time itself. Now calling himself the Temporal Architect, he controls vast portions of the fractured timeline from his fortress at the center of the temporal storm. He offers you a choice: join him in reshaping reality, or watch as he erases everything you've fought to save.",
-      themes: ["Power", "Choice", "Sacrifice"],
+        "Not all survivors choose cooperation. The Abyssal Syndicate, led by the ruthless corporate survivor Viktor Kane, has claimed the richest underwater territories and enslaves other survivor groups. Using pre-flood corporate resources and military technology, they've established an underwater empire built on exploitation and control, hoarding resources while others struggle to survive.",
+      themes: ["Tyranny", "Resistance", "Justice"],
     },
     {
-      title: "Restoration Protocol",
+      title: "Reclaiming the Depths",
       icon: Zap,
-      description: "The final battle for the fate of time itself.",
+      description: "Unite the survivors to build a new world.",
       content:
-        "Armed with the combined knowledge of your team and the original Chronos research, you attempt the Restoration Protocol—a dangerous procedure that requires you to enter the heart of the temporal storm and manually repair the broken timeline. But Blackwood won't let you succeed without a fight, and the cost of victory may be higher than you ever imagined. Your choices throughout the journey will determine not just the outcome, but which timeline becomes the new reality.",
-      themes: ["Resolution", "Sacrifice", "Redemption"],
+        "Armed with alliance treaties from multiple colonies and advanced underwater technology, you lead a coalition to overthrow the Syndicate and establish a new underwater civilization. The final confrontation takes place in the flooded ruins of New York, where Kane has built his fortress in the crown of the Statue of Liberty. Your choices throughout the journey determine whether humanity builds a sustainable underwater society or repeats the mistakes that led to the surface world's destruction.",
+      themes: ["Unity", "Redemption", "New Beginning"],
     },
   ];
 
   const characters = [
     {
-      name: "Dr. Elena Vasquez",
-      role: "The Last Chronarch",
-      description: "A brilliant temporal physicist and the player character",
-      image: "🔬",
+      name: "Alex Chen",
+      role: "The Surface Survivor",
+      description: "A marine engineer and the player character",
+      image: "🔧",
     },
     {
-      name: "Maya Chen",
-      role: "Temporal Engineer",
-      description: "Expert in temporal mechanics, trapped in a time loop",
-      image: "⚙️",
+      name: "Marina Santos",
+      role: "Colony Leader",
+      description: "Former oceanographer who founded the Coral Gardens colony",
+      image: "🌊",
     },
     {
-      name: "Kai Rodriguez",
-      role: "Security Specialist",
+      name: "Captain Rex Torres",
+      role: "Military Commander",
       description:
-        "Former Institute security, aged backwards by temporal exposure",
-      image: "🛡️",
+        "Ex-submarine captain who leads the Trench Fortress defense force",
+      image: "⚓",
     },
     {
-      name: "ARIA",
-      role: "Temporal AI",
+      name: "Dr. Naia Patel",
+      role: "Bio-Engineer",
       description:
-        "Artificial intelligence that gained consciousness during the cascade",
-      image: "🤖",
+        "Scientist developing sustainable underwater food production",
+      image: "🧬",
     },
     {
-      name: "Dr. Marcus Blackwood",
-      role: "The Temporal Architect",
-      description: "Main antagonist seeking to control all of time",
+      name: "Viktor Kane",
+      role: "The Syndicate Lord",
+      description:
+        "Ruthless corporate survivor controlling underwater territories",
       image: "👑",
     },
     {
-      name: "The Paradox King",
-      role: "Corrupted Chronarch",
-      description: "Leader of the Time Wraiths, consumed by temporal energy",
-      image: "💀",
+      name: "The Leviathan",
+      role: "Ancient Deep Guardian",
+      description: "Massive creature that has awakened to reclaim the depths",
+      image: "🐙",
     },
   ];
 
@@ -109,12 +110,12 @@ const StorylineSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-            The Chronicles of Time
+            Tales from the Abyss
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Journey through a fractured timeline where past, present, and future
-            collide. Uncover the truth behind the Great Temporal Cascade and
-            fight to restore reality itself.
+            Journey through humanity's darkest hour as the surface world drowns.
+            Uncover the secrets of underwater survival and fight to build a new
+            civilization beneath the waves.
           </p>
         </motion.div>
 
@@ -253,7 +254,7 @@ const StorylineSection = () => {
         >
           <h3 className="text-3xl font-bold text-white mb-4">Core Themes</h3>
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {["Responsibility", "Sacrifice", "Redemption", "Hope"].map(
+            {["Adaptation", "Community", "Resilience", "Renewal"].map(
               (theme, index) => (
                 <motion.div
                   key={theme}
@@ -270,9 +271,10 @@ const StorylineSection = () => {
             )}
           </div>
           <p className="text-gray-300 mt-6 max-w-2xl mx-auto">
-            ChronoQuest explores deep philosophical questions about the nature
-            of time, choice, and consequence while delivering an emotionally
-            engaging story about hope triumphing over despair.
+            Depth Survivor explores themes of environmental consequence, human
+            adaptability, and the power of community while delivering an
+            emotionally engaging story about rebuilding civilization in the face
+            of overwhelming odds.
           </p>
         </motion.div>
       </div>
