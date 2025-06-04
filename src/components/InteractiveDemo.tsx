@@ -27,7 +27,7 @@ const InteractiveDemo = () => {
   const [currentAbility, setCurrentAbility] = useState<string | null>(null);
   const [gameObjects, setGameObjects] = useState<DemoObject[]>([
     {
-      id: "block1",
+      id: "resource1",
       x: 20,
       y: 50,
       type: "block",
@@ -35,7 +35,7 @@ const InteractiveDemo = () => {
       active: true,
     },
     {
-      id: "block2",
+      id: "resource2",
       x: 40,
       y: 30,
       type: "block",
@@ -43,7 +43,7 @@ const InteractiveDemo = () => {
       active: true,
     },
     {
-      id: "enemy1",
+      id: "shark1",
       x: 70,
       y: 60,
       type: "enemy",
@@ -51,7 +51,7 @@ const InteractiveDemo = () => {
       active: true,
     },
     {
-      id: "projectile1",
+      id: "bubble1",
       x: 10,
       y: 40,
       type: "projectile",
@@ -65,44 +65,44 @@ const InteractiveDemo = () => {
 
   const abilities = [
     {
-      id: "rewind",
-      name: "Rewind",
+      id: "scan",
+      name: "Scan",
       icon: RotateCcw,
       color: "from-blue-500 to-cyan-500",
-      description: "Reverse object positions by 3 seconds",
+      description: "Scan for resources and threats nearby",
       cooldown: 3,
     },
     {
-      id: "pause",
-      name: "Pause",
+      id: "craft",
+      name: "Craft",
       icon: Pause,
       color: "from-purple-500 to-indigo-500",
-      description: "Freeze all objects except yourself",
+      description: "Combine resources to create useful items",
       cooldown: 2,
     },
     {
-      id: "accelerate",
-      name: "Accelerate",
+      id: "boost",
+      name: "Oxygen Boost",
       icon: FastForward,
       color: "from-orange-500 to-red-500",
-      description: "Speed up time for all objects",
+      description: "Temporarily increase oxygen efficiency",
       cooldown: 4,
     },
     {
-      id: "echo",
-      name: "Echo",
+      id: "distract",
+      name: "Distract",
       icon: Zap,
       color: "from-green-500 to-teal-500",
-      description: "Create temporal copies of objects",
+      description: "Create noise to distract hostile creatures",
       cooldown: 5,
     },
   ];
 
   const challenges = [
-    { name: "Dodge the Projectile", points: 100 },
-    { name: "Move Block to Safety", points: 200 },
-    { name: "Defeat Enemy", points: 300 },
-    { name: "Perfect Timing", points: 500 },
+    { name: "Collect Resources", points: 100 },
+    { name: "Avoid Sea Creatures", points: 200 },
+    { name: "Manage Oxygen", points: 300 },
+    { name: "Survival Master", points: 500 },
   ];
 
   // Simulate object movement
@@ -119,16 +119,19 @@ const InteractiveDemo = () => {
 
           switch (obj.type) {
             case "projectile":
-              newX += 2;
-              if (newX > 100) newX = 0;
+              // Bubbles float upward
+              newY -= 1;
+              if (newY < 0) newY = 100;
               break;
             case "enemy":
+              // Sharks patrol in patterns
               newY += Math.sin(Date.now() / 1000) * 0.5;
-              newX -= 0.5;
+              newX -= 0.8;
               if (newX < 0) newX = 100;
               break;
             case "block":
-              // Blocks can be manipulated by player
+              // Resources can drift slightly
+              newY += Math.sin(Date.now() / 2000) * 0.2;
               break;
           }
 
@@ -150,42 +153,76 @@ const InteractiveDemo = () => {
     setScore((prev) => prev + 50 * combo);
 
     switch (abilityId) {
-      case "rewind":
-        if (timeHistory.length > 3) {
-          setGameObjects(timeHistory[timeHistory.length - 3]);
-        }
-        break;
-
-      case "pause":
-        setIsPlaying(false);
-        setTimeout(() => setIsPlaying(true), 2000);
-        break;
-
-      case "accelerate":
-        // Simulate acceleration by updating positions more rapidly
+      case "scan":
+        // Highlight all resources and threats
         setGameObjects((prev) =>
           prev.map((obj) => ({
             ...obj,
-            x: obj.type === "projectile" ? Math.min(obj.x + 10, 100) : obj.x,
-            y: obj.type === "enemy" ? Math.max(obj.y - 5, 0) : obj.y,
+            color:
+              obj.type === "block"
+                ? "bg-green-500 pulse-glow"
+                : obj.type === "enemy"
+                  ? "bg-red-500 pulse-glow"
+                  : obj.color,
+          })),
+        );
+        setTimeout(() => {
+          setGameObjects((prev) =>
+            prev.map((obj) => ({
+              ...obj,
+              color:
+                obj.type === "block"
+                  ? "bg-blue-500"
+                  : obj.type === "enemy"
+                    ? "bg-red-500"
+                    : obj.type === "projectile"
+                      ? "bg-yellow-500"
+                      : obj.color,
+            })),
+          );
+        }, 2000);
+        break;
+
+      case "craft":
+        // Combine nearby resources
+        setGameObjects((prev) => {
+          const resources = prev.filter((obj) => obj.type === "block");
+          if (resources.length >= 2) {
+            return [
+              ...prev.filter(
+                (obj) => obj.type !== "block" || obj.id !== resources[0].id,
+              ),
+              {
+                ...resources[0],
+                color: "bg-purple-500",
+                id: "crafted_item",
+              },
+            ];
+          }
+          return prev;
+        });
+        break;
+
+      case "boost":
+        // Simulate oxygen efficiency boost
+        setGameObjects((prev) =>
+          prev.map((obj) => ({
+            ...obj,
+            x: obj.type === "projectile" ? Math.min(obj.x + 5, 100) : obj.x,
+            y: obj.type === "enemy" ? Math.max(obj.y + 10, 0) : obj.y,
           })),
         );
         break;
 
-      case "echo":
-        // Create temporal echoes
-        setGameObjects((prev) => [
-          ...prev,
-          ...prev
-            .filter((obj) => obj.type === "block")
-            .map((obj) => ({
-              ...obj,
-              id: obj.id + "_echo",
-              color: obj.color + " opacity-50",
-              x: obj.x + 5,
-              y: obj.y + 5,
-            })),
-        ]);
+      case "distract":
+        // Push enemies away
+        setGameObjects((prev) =>
+          prev.map((obj) => ({
+            ...obj,
+            x: obj.type === "enemy" ? Math.min(obj.x + 15, 100) : obj.x,
+            y: obj.type === "enemy" ? Math.min(obj.y + 10, 100) : obj.y,
+          })),
+        );
         break;
     }
 
@@ -196,7 +233,7 @@ const InteractiveDemo = () => {
   const resetDemo = () => {
     setGameObjects([
       {
-        id: "block1",
+        id: "resource1",
         x: 20,
         y: 50,
         type: "block",
@@ -204,7 +241,7 @@ const InteractiveDemo = () => {
         active: true,
       },
       {
-        id: "block2",
+        id: "resource2",
         x: 40,
         y: 30,
         type: "block",
@@ -212,7 +249,7 @@ const InteractiveDemo = () => {
         active: true,
       },
       {
-        id: "enemy1",
+        id: "shark1",
         x: 70,
         y: 60,
         type: "enemy",
@@ -220,7 +257,7 @@ const InteractiveDemo = () => {
         active: true,
       },
       {
-        id: "projectile1",
+        id: "bubble1",
         x: 10,
         y: 40,
         type: "projectile",
@@ -252,9 +289,9 @@ const InteractiveDemo = () => {
             Interactive Demo
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Experience the core mechanics of ChronoQuest! Practice your temporal
-            abilities in this interactive demonstration. Watch how time
-            manipulation affects the game world.
+            Experience the core mechanics of Depth Survivor! Practice underwater
+            survival in this interactive demonstration. Learn oxygen management,
+            resource gathering, and creature avoidance.
           </p>
         </motion.div>
 
@@ -336,9 +373,9 @@ const InteractiveDemo = () => {
                       >
                         {/* Object Type Indicator */}
                         <div className="absolute -top-6 left-0 text-xs text-white opacity-75">
-                          {obj.type === "block" && "📦"}
-                          {obj.type === "enemy" && "👾"}
-                          {obj.type === "projectile" && "⚡"}
+                          {obj.type === "block" && "🔧"}
+                          {obj.type === "enemy" && "🦈"}
+                          {obj.type === "projectile" && "🫧"}
                         </div>
                       </motion.div>
                     ))}
@@ -469,20 +506,24 @@ const InteractiveDemo = () => {
                   <div className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
                     <span>
-                      Use Rewind to undo mistakes and reset object positions
+                      Use Scan to locate valuable resources and identify threats
                     </span>
                   </div>
                   <div className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
-                    <span>Pause time to plan your next move strategically</span>
+                    <span>
+                      Craft items by combining resources strategically
+                    </span>
                   </div>
                   <div className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
-                    <span>Combine abilities for powerful temporal effects</span>
+                    <span>Manage oxygen carefully - it's your lifeline</span>
                   </div>
                   <div className="flex items-start space-x-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0" />
-                    <span>Build combos by chaining abilities together</span>
+                    <span>
+                      Avoid or distract dangerous creatures to survive
+                    </span>
                   </div>
                 </div>
               </CardContent>
@@ -501,17 +542,17 @@ const InteractiveDemo = () => {
             Full Game Features
           </h3>
           <p className="text-gray-300 mb-6 max-w-3xl mx-auto">
-            This demonstration showcases just a small fraction of ChronoQuest's
-            temporal mechanics. The full game features complex puzzles, epic
-            boss battles, and a rich story where every choice affects the
-            timeline.
+            This demonstration showcases just a small fraction of Depth
+            Survivor's survival mechanics. The full game features complex base
+            building, diverse underwater environments, and a rich story about
+            rebuilding civilization.
           </p>
           <div className="grid md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
-              "50+ Unique Puzzles",
-              "Epic Boss Battles",
-              "Multiple Endings",
-              "6 Time Powers",
+              "Base Building",
+              "Deep Sea Exploration",
+              "Colony Management",
+              "Creature Encounters",
             ].map((feature, index) => (
               <motion.div
                 key={feature}
