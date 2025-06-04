@@ -121,7 +121,7 @@ const GameMechanics = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
             Underwater Survival Systems
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -147,10 +147,8 @@ const GameMechanics = () => {
                 className="relative"
               >
                 <Card
-                  className={`bg-black/50 border-gray-700 hover:border-cyan-500/50 transition-all duration-300 cursor-pointer ${
-                    isActive
-                      ? "border-cyan-500 shadow-lg shadow-cyan-500/20"
-                      : ""
+                  className={`bg-black/50 border-gray-700 hover:border-red-500/50 transition-all duration-300 cursor-pointer ${
+                    isActive ? "border-red-500 shadow-lg shadow-red-500/20" : ""
                   }`}
                   onClick={() => setActiveAbility(isActive ? null : ability.id)}
                 >
@@ -219,9 +217,9 @@ const GameMechanics = () => {
                 {feature.points.map((point, pointIndex) => (
                   <li
                     key={pointIndex}
-                    className="text-cyan-400 flex items-center"
+                    className="text-red-400 flex items-center"
                   >
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full mr-3" />
+                    <div className="w-2 h-2 bg-red-400 rounded-full mr-3" />
                     {point}
                   </li>
                 ))}
@@ -235,7 +233,7 @@ const GameMechanics = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-center bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-lg p-8 border border-cyan-500/20"
+          className="text-center bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-lg p-8 border border-red-500/20"
         >
           <h3 className="text-3xl font-bold text-white mb-4">
             Ready to Dive Into Survival?
@@ -247,7 +245,7 @@ const GameMechanics = () => {
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold px-8 py-4"
+            className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-semibold px-8 py-4"
             onClick={() =>
               document
                 .getElementById("demo")
