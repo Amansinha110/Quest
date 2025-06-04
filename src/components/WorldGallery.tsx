@@ -2,106 +2,113 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Clock, Mountain, Building2, Zap, TreePine, Waves } from "lucide-react";
+import {
+  Anchor,
+  Mountain,
+  Building2,
+  Zap,
+  TreePine,
+  Waves,
+} from "lucide-react";
 
 const WorldGallery = () => {
   const [selectedLocation, setSelectedLocation] = useState<number>(0);
 
   const locations = [
     {
-      name: "The Temporal Nexus",
-      icon: Clock,
-      category: "Central Hub",
-      timeState: "Fractured",
-      description: "The epicenter of the Great Temporal Cascade",
+      name: "The Drowned Metropolis",
+      icon: Building2,
+      category: "Ruined City",
+      timeState: "Submerged",
+      description: "The flooded remains of humanity's greatest city",
       fullDescription:
-        "Once the Chronos Institute's main facility, the Temporal Nexus now exists in a state of perpetual temporal flux. Fragments of different time periods overlap and intersect, creating impossible geometries where medieval stone towers grow from futuristic metal foundations. Temporal storms rage continuously here, and reality itself bends and warps. This is where the final confrontation with the Temporal Architect takes place.",
+        "Once New Manhattan, this massive underwater metropolis stretches for miles beneath the waves. Skyscrapers serve as vertical reefs, their windows now home to bioluminescent sea life. The subway tunnels have become underwater highways, and Central Park is now a kelp forest. Hidden within the ruins are valuable pre-flood technologies, survivor caches, and the secrets of how the surface world fell.",
       features: [
-        "Time Storm Center",
-        "Institute Ruins",
-        "Temporal Anomalies",
-        "Reality Fractures",
+        "Skyscraper Ruins",
+        "Tech Caches",
+        "Tunnel Networks",
+        "Cultural Artifacts",
       ],
       colors: "from-cyan-500 to-blue-600",
     },
     {
-      name: "Crystal Gardens",
+      name: "Coral Gardens Colony",
       icon: TreePine,
-      category: "Natural Wonder",
-      timeState: "Accelerated Growth",
-      description: "A botanical paradise where time moves at incredible speed",
+      category: "Living Settlement",
+      timeState: "Thriving Ecosystem",
+      description: "A bioengineered coral city that grows and adapts",
       fullDescription:
-        "In these enchanted gardens, temporal energy has accelerated plant growth beyond imagination. Ancient trees grow to massive sizes in minutes, flowers bloom and wither in beautiful time-lapse sequences, and exotic temporal flora exists nowhere else in the world. The Crystal Gardens serve as a safe haven where you can practice your time manipulation abilities and discover temporal crystals that enhance your powers.",
+        "Built within and from massive coral formations, this colony represents humanity's successful adaptation to aquatic life. The coral structures provide natural air pockets, water filtration, and defensive barriers. Bioluminescent organisms provide lighting, while carefully cultivated sea plants offer sustainable food sources. This living city demonstrates how humanity can work with ocean ecosystems rather than against them.",
       features: [
-        "Temporal Flora",
-        "Crystal Formations",
-        "Time Pools",
-        "Sanctuary Zones",
+        "Living Architecture",
+        "Bio-luminescent Lighting",
+        "Sustainable Agriculture",
+        "Natural Defenses",
       ],
       colors: "from-green-500 to-emerald-600",
     },
     {
-      name: "Clockwork Citadel",
-      icon: Building2,
-      category: "Ancient Fortress",
-      timeState: "Mechanical Time",
-      description: "A massive fortress powered by temporal machinery",
+      name: "The Abyssal Fortress",
+      icon: Anchor,
+      category: "Syndicate Stronghold",
+      timeState: "Militarized",
+      description: "Viktor Kane's underwater empire headquarters",
       fullDescription:
-        "Built by an ancient civilization that mastered temporal engineering, the Clockwork Citadel is a marvel of brass gears, crystal conduits, and temporal mechanisms. Every wall pulses with chronological energy, and the entire structure exists in perfect temporal synchronization. Solve intricate timing puzzles to navigate its halls and uncover the secrets of the original Chronarchs who built this wonder.",
+        "Built from salvaged naval vessels and pre-flood corporate towers, this fortress represents the dark side of underwater survival. Massive submarine docks, weapons manufacturing facilities, and slave quarters show how some have chosen domination over cooperation. The fortress sits in the deepest trenches, using the crushing pressure as a natural defense while exploiting geothermal vents for unlimited energy.",
       features: [
-        "Gear Mechanisms",
-        "Temporal Puzzles",
-        "Ancient Archives",
-        "Clock Towers",
+        "Military Installations",
+        "Submarine Docks",
+        "Weapons Manufacturing",
+        "Geothermal Power",
       ],
       colors: "from-amber-500 to-orange-600",
     },
     {
-      name: "Void Wastelands",
+      name: "The Twilight Zone",
       icon: Mountain,
-      category: "Corrupted Zone",
-      timeState: "Temporal Vacuum",
-      description: "Barren lands where time itself has been drained away",
+      category: "Pressure Depths",
+      timeState: "Extreme Environment",
+      description: "The crushing depths where only the brave venture",
       fullDescription:
-        "These desolate expanses represent areas where temporal energy has been completely stripped away, creating zones of absolute temporal void. Nothing ages, grows, or changes here—it exists in perfect stasis. The landscape is haunting and beautiful, with crystallized moments frozen forever. Time Wraiths gather here in large numbers, making it one of the most dangerous regions in the fractured world.",
+        "Below 1000 meters, the ocean becomes an alien world of crushing pressure and perpetual darkness. Strange bioluminescent creatures patrol these depths, and the pressure can crush unprepared explorers instantly. However, these depths also hide the richest resource deposits, ancient ruins from pre-flood deep sea research stations, and the lair of the legendary Leviathan—an ancient creature awakened by humanity's intrusion into its domain.",
       features: [
-        "Temporal Void",
-        "Wraith Spawns",
-        "Crystal Formations",
-        "Frozen Moments",
+        "Extreme Pressure",
+        "Bioluminescent Life",
+        "Rich Deposits",
+        "Ancient Secrets",
       ],
       colors: "from-gray-500 to-slate-600",
     },
     {
-      name: "Echo Lake",
+      name: "Thermal Vents",
       icon: Waves,
-      category: "Temporal Phenomenon",
-      timeState: "Reflection Loops",
-      description: "A mystical lake that shows visions of past and future",
+      category: "Geothermal Zone",
+      timeState: "Active Energy",
+      description: "Underwater volcanoes that power deep sea colonies",
       fullDescription:
-        "This otherworldly lake's surface doesn't reflect the present, but instead shows temporal echoes of events that happened or will happen at this location. The water itself is infused with temporal energy, creating ripples that flow both forward and backward through time. Dive beneath the surface to experience memories and prophecies, but beware—spending too long in the Echo Lake can trap you in its temporal currents.",
+        "These underwater geysers create warm oases in the cold depths, supporting unique ecosystems and providing unlimited energy for those brave enough to harness them. The mineral-rich waters support exotic life forms and deposit valuable rare earth elements. However, the vents are unstable and dangerous—their eruptions can destroy entire colonies, but their energy is essential for powering large underwater settlements.",
       features: [
-        "Temporal Visions",
-        "Memory Pools",
-        "Future Glimpses",
-        "Time Currents",
+        "Unlimited Energy",
+        "Rare Minerals",
+        "Unique Ecosystems",
+        "Volcanic Activity",
       ],
       colors: "from-blue-500 to-indigo-600",
     },
     {
-      name: "The Paradox Arena",
+      name: "The Hunting Grounds",
       icon: Zap,
-      category: "Combat Zone",
-      timeState: "Combat Accelerated",
+      category: "Danger Zone",
+      timeState: "Predator Territory",
       description:
-        "A gladiatorial arena where time moves differently for each combatant",
+        "A region where mutated sea creatures have established dominance",
       fullDescription:
-        "This supernatural colosseum was created by the Temporal Architect as a testing ground for temporal warriors. The arena floor is divided into zones with different time flows—some move in slow motion, others accelerate rapidly, and some even reverse time. Master the art of temporal combat here, where your timing abilities are pushed to their absolute limits in battles against Time Wraiths and corrupted Chronarchs.",
+        "This region has become the domain of evolved and mutated sea predators that see humans as invaders. Pack-hunting bio-engineered sharks, giant cephalopods with advanced intelligence, and massive schools of aggressive fish patrol these waters. The area was once a marine research facility that experimented with genetic modification—their creations now rule the seas, turning this region into a deadly proving ground for survivor combat skills.",
       features: [
-        "Variable Time Zones",
-        "Combat Challenges",
-        "Temporal Weapons",
-        "Arena Mechanics",
+        "Apex Predators",
+        "Pack Hunting",
+        "Mutation Zones",
+        "Research Ruins",
       ],
       colors: "from-red-500 to-pink-600",
     },
@@ -109,20 +116,20 @@ const WorldGallery = () => {
 
   const visualStyles = [
     {
-      name: "Temporal Particle Effects",
-      description: "Floating energy motes that phase in and out of time",
+      name: "Underwater Particle Effects",
+      description: "Floating debris, plankton, and bubbles create depth",
     },
     {
-      name: "Reality Distortion",
-      description: "Visual warping effects showing time bending space",
+      name: "Light Caustics",
+      description: "Dynamic light patterns dancing through the water",
     },
     {
-      name: "Chromatic Aberration",
-      description: "Color separation effects during temporal shifts",
+      name: "Pressure Distortion",
+      description: "Visual effects showing crushing depth pressure",
     },
     {
-      name: "Temporal Echoes",
-      description: "Ghostly afterimages of past/future states",
+      name: "Bioluminescence",
+      description: "Living light sources from underwater creatures",
     },
   ];
 
@@ -137,12 +144,13 @@ const WorldGallery = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-cyan-500 bg-clip-text text-transparent">
-            Fractured Realms
+            Sunken Worlds
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Explore breathtaking environments where time itself has been
-            shattered. Each location offers unique temporal phenomena,
-            challenging puzzles, and stunning visual experiences.
+            Explore breathtaking underwater environments where humanity
+            struggles to survive. Each location offers unique challenges,
+            resources, and opportunities for building thriving underwater
+            communities.
           </p>
         </motion.div>
 
@@ -306,7 +314,7 @@ const WorldGallery = () => {
         >
           <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-indigo-500/20">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Visual Technology
+              Underwater Technology
             </h3>
             <div className="space-y-4">
               {visualStyles.map((style, index) => (
@@ -334,32 +342,32 @@ const WorldGallery = () => {
               Environmental Design
             </h3>
             <p className="text-gray-300 mb-4">
-              Each location in ChronoQuest is carefully crafted to reflect its
-              unique temporal properties:
+              Each location in Depth Survivor is carefully crafted to reflect
+              its unique underwater characteristics and survival challenges:
             </p>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-start space-x-2">
                 <span className="text-cyan-400 mt-1">•</span>
-                <span>Dynamic lighting that responds to temporal energy</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <span className="text-cyan-400 mt-1">•</span>
                 <span>
-                  Procedural temporal effects that change based on player
-                  actions
+                  Dynamic water physics and realistic pressure effects
                 </span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="text-cyan-400 mt-1">•</span>
                 <span>
-                  Interactive environments that react to time manipulation
+                  Procedural creature behavior that adapts to player presence
                 </span>
               </li>
               <li className="flex items-start space-x-2">
                 <span className="text-cyan-400 mt-1">•</span>
                 <span>
-                  Seamless transitions between different temporal states
+                  Interactive environments that support base building and
+                  crafting
                 </span>
+              </li>
+              <li className="flex items-start space-x-2">
+                <span className="text-cyan-400 mt-1">•</span>
+                <span>Weather systems that affect visibility and movement</span>
               </li>
             </ul>
           </div>
