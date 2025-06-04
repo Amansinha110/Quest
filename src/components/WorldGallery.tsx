@@ -143,7 +143,7 @@ const WorldGallery = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-cyan-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
             Sunken Worlds
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -176,8 +176,8 @@ const WorldGallery = () => {
                 <Card
                   className={`bg-black/50 border-2 transition-all duration-300 overflow-hidden ${
                     isSelected
-                      ? "border-indigo-500 shadow-lg shadow-indigo-500/20"
-                      : "border-gray-700 hover:border-indigo-500/50"
+                      ? "border-red-500 shadow-lg shadow-red-500/20"
+                      : "border-gray-700 hover:border-red-500/50"
                   }`}
                 >
                   <CardContent className="p-0">
@@ -207,7 +207,7 @@ const WorldGallery = () => {
                         </h4>
                         <Badge
                           variant="outline"
-                          className="text-indigo-400 border-indigo-400"
+                          className="text-red-400 border-red-400"
                         >
                           {location.category}
                         </Badge>
@@ -223,7 +223,7 @@ const WorldGallery = () => {
                           .map((feature, featureIndex) => (
                             <span
                               key={featureIndex}
-                              className="text-xs bg-indigo-500/20 text-indigo-300 px-2 py-1 rounded"
+                              className="text-xs bg-red-500/20 text-red-300 px-2 py-1 rounded"
                             >
                               {feature}
                             </span>
@@ -248,17 +248,17 @@ const WorldGallery = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-gradient-to-r from-indigo-900/30 to-cyan-900/30 rounded-lg p-8 border border-indigo-500/30 mb-16"
+          className="bg-gradient-to-r from-red-900/30 to-pink-900/30 rounded-lg p-8 border border-red-500/30 mb-16"
         >
           <div className="flex items-center space-x-4 mb-6">
             {React.createElement(locations[selectedLocation].icon, {
-              className: "w-8 h-8 text-indigo-400",
+              className: "w-8 h-8 text-red-400",
             })}
             <div>
               <h3 className="text-3xl font-bold text-white">
                 {locations[selectedLocation].name}
               </h3>
-              <p className="text-indigo-400">
+              <p className="text-red-400">
                 {locations[selectedLocation].category} •{" "}
                 {locations[selectedLocation].timeState}
               </p>
@@ -277,7 +277,7 @@ const WorldGallery = () => {
               <div className="space-y-2">
                 {locations[selectedLocation].features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-indigo-400 rounded-full" />
+                    <div className="w-2 h-2 bg-red-400 rounded-full" />
                     <span className="text-gray-300">{feature}</span>
                   </div>
                 ))}
@@ -289,7 +289,7 @@ const WorldGallery = () => {
               <div className="space-y-2">
                 {visualStyles.slice(0, 2).map((style, index) => (
                   <div key={index} className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-cyan-400 rounded-full" />
+                    <div className="w-2 h-2 bg-pink-400 rounded-full" />
                     <div>
                       <span className="text-gray-300 text-sm">
                         {style.name}
@@ -312,7 +312,7 @@ const WorldGallery = () => {
           transition={{ duration: 0.8 }}
           className="grid md:grid-cols-2 gap-8"
         >
-          <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-indigo-500/20">
+          <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-red-500/20">
             <h3 className="text-2xl font-bold text-white mb-4">
               Underwater Technology
             </h3>
@@ -325,11 +325,9 @@ const WorldGallery = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-start space-x-3"
                 >
-                  <div className="w-3 h-3 bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-full mt-1 flex-shrink-0" />
+                  <div className="w-3 h-3 bg-gradient-to-r from-red-400 to-pink-400 rounded-full mt-1 flex-shrink-0" />
                   <div>
-                    <h4 className="text-indigo-300 font-semibold">
-                      {style.name}
-                    </h4>
+                    <h4 className="text-red-300 font-semibold">{style.name}</h4>
                     <p className="text-gray-400 text-sm">{style.description}</p>
                   </div>
                 </motion.div>
@@ -337,7 +335,7 @@ const WorldGallery = () => {
             </div>
           </div>
 
-          <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-cyan-500/20">
+          <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 border border-pink-500/20">
             <h3 className="text-2xl font-bold text-white mb-4">
               Environmental Design
             </h3>
@@ -347,7 +345,7 @@ const WorldGallery = () => {
             </p>
             <ul className="space-y-2 text-gray-400">
               <li className="flex items-start space-x-2">
-                <span className="text-cyan-400 mt-1">•</span>
+                <span className="text-pink-400 mt-1">•</span>
                 <span>
                   Dynamic water physics and realistic pressure effects
                 </span>
