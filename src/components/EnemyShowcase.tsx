@@ -9,162 +9,154 @@ const EnemyShowcase = () => {
 
   const enemies = [
     {
-      name: "Time Wraith",
-      type: "Temporal Predator",
+      name: "Bio-Shark",
+      type: "Mutated Predator",
       threat: "Medium",
       icon: Skull,
       color: "from-red-500 to-orange-500",
-      description: "Corrupted beings that feed on temporal energy",
+      description: "Genetically enhanced sharks with pack hunting behavior",
       fullDescription:
-        "Time Wraiths are the most common enemies you'll encounter—once-human beings who were caught in temporal storms and transformed into energy-hungry predators. They exist partially outside normal time flow, allowing them to phase in and out of reality. Their touch drains temporal energy, weakening your abilities. They're vulnerable to concentrated bursts of chronological force and can be temporarily banished using Temporal Rewind.",
-      abilities: ["Phase Shifting", "Energy Drain", "Temporal Immunity"],
+        "Bio-Sharks are the result of pre-flood genetic experiments that escaped during the great submersion. These apex predators hunt in coordinated packs, using echolocation to track prey through murky waters. Their enhanced intelligence allows them to set traps and ambush tactics. They're armored with bio-engineered scales that deflect most conventional weapons, requiring specialized underwater armaments or environmental tactics to defeat.",
+      abilities: [
+        "Pack Coordination",
+        "Enhanced Echolocation",
+        "Armored Scales",
+      ],
       weaknesses: [
-        "Concentrated Time Bursts",
-        "Temporal Anchors",
-        "Light-based Attacks",
+        "Sonic Disruptors",
+        "Electrical Weapons",
+        "Territory Boundaries",
       ],
       tactics:
-        "Use Chronos Pause to freeze them mid-phase, then attack with temporal energy blasts. Group them together with Time Acceleration before unleashing area attacks.",
-      variants: ["Lesser Wraith", "Greater Wraith", "Wraith Lord"],
+        "Use sonar jammers to disrupt their echolocation, then engage with electrical harpoons. Retreat to shallow waters where their size becomes a disadvantage.",
+      variants: ["Scout Shark", "Alpha Shark", "Mega Shark"],
     },
     {
-      name: "Paradox Soldier",
-      type: "Timeline Guardian",
+      name: "Syndicate Diver",
+      type: "Human Antagonist",
       threat: "High",
       icon: Shield,
       color: "from-blue-500 to-purple-500",
-      description: "Elite warriors from an alternate timeline",
+      description: "Elite underwater soldiers serving the Abyssal Syndicate",
       fullDescription:
-        "These heavily armored soldiers come from a timeline where the Temporal Architect succeeded in his conquest. They wear advanced chronium armor that makes them highly resistant to temporal manipulation. Their weapons fire bullets that exist in multiple timelines simultaneously, making them extremely difficult to dodge. They're disciplined, tactical, and work in coordinated groups to overwhelm opponents.",
+        "These heavily equipped divers work for Viktor Kane's underwater empire, raiding other survivor colonies for resources and slaves. They wear advanced power armor with integrated life support, propulsion systems, and heavy weaponry. Their training focuses on underwater combat and they use military-grade submarines and submersibles. They're disciplined, well-equipped, and ruthless in pursuing Syndicate objectives.",
       abilities: [
-        "Timeline Resistance",
-        "Multi-temporal Weapons",
-        "Tactical Coordination",
+        "Advanced Equipment",
+        "Military Training",
+        "Submarine Support",
       ],
       weaknesses: [
-        "Temporal Echo Confusion",
-        "Chrono Shield Overload",
-        "Environmental Hazards",
+        "Equipment Dependency",
+        "Limited Air Supply",
+        "Moral Conflicts",
       ],
       tactics:
-        "Create Temporal Echoes to confuse their targeting systems. Use environmental time effects to your advantage and exploit gaps in their temporal armor.",
-      variants: ["Scout", "Heavy", "Commander"],
+        "Target their equipment systems to disable their advantages. Use environmental hazards and superior knowledge of local waters to outmaneuver their technology.",
+      variants: ["Scout Diver", "Heavy Assault", "Sub Commander"],
     },
     {
-      name: "Chronophage",
-      type: "Temporal Beast",
+      name: "Kraken Spawn",
+      type: "Ancient Sea Monster",
       threat: "High",
       icon: Eye,
       color: "from-green-500 to-teal-500",
-      description: "Ancient creatures that devour time itself",
+      description: "Offspring of awakened deep-sea leviathans",
       fullDescription:
-        "Chronophages are massive, alien creatures that existed before linear time was established. They view the current timeline as an aberration and seek to return reality to its primordial state of temporal chaos. They can literally eat time, aging objects and beings rapidly or stealing years from their lifespan. Their presence creates temporal dead zones where your abilities become unpredictable.",
+        "The flooding of the surface world has awakened ancient creatures from the deepest trenches. Kraken Spawn are massive cephalopods with supernatural intelligence and psychic abilities. They can camouflage perfectly with their environment, crush submarines with their tentacles, and use bio-electric attacks to disable electronics. They view humans as invaders and seek to reclaim the ocean depths for their kind.",
       abilities: [
-        "Time Consumption",
-        "Age Manipulation",
-        "Temporal Dead Zones",
+        "Perfect Camouflage",
+        "Psychic Abilities",
+        "Bio-electric Attacks",
       ],
-      weaknesses: [
-        "Temporal Stability Fields",
-        "Pure Chronium",
-        "Coordinated Time Attacks",
-      ],
+      weaknesses: ["Bright Lights", "Sonic Weapons", "Territorial Limits"],
       tactics:
-        "Maintain distance and use ranged temporal attacks. Create Temporal Echoes to distract them while setting up powerful combination abilities.",
-      variants: ["Hatchling", "Adult", "Ancient"],
+        "Use high-intensity lights to reveal their position, then attack with sonic weapons to disorient them. Avoid their territorial waters when possible.",
+      variants: ["Juvenile", "Adult", "Elder Spawn"],
     },
     {
-      name: "Echo Assassin",
-      type: "Temporal Infiltrator",
+      name: "Plague Jellyfish",
+      type: "Toxic Swarm",
       threat: "Very High",
       icon: Zap,
       color: "from-yellow-500 to-red-500",
-      description: "Shadows from erased timelines seeking revenge",
+      description: "Toxic jellyfish that hunt in massive swarms",
       fullDescription:
-        "Echo Assassins are the remnants of people who were erased from the timeline during temporal experiments. They exist as living temporal paradoxes, neither fully real nor completely gone. They can step between timeline echoes, appearing and disappearing at will. Their attacks ignore conventional defenses and can damage you across multiple temporal states simultaneously.",
-      abilities: [
-        "Timeline Stepping",
-        "Paradox Strikes",
-        "Temporal Invisibility",
-      ],
+        "These mutated jellyfish were created by pollution and toxic waste from the flooded cities. They travel in vast swarms that can stretch for miles, their bodies pulsing with deadly toxins. Contact with their tentacles causes immediate paralysis and slow death. They're attracted to artificial lights and electrical signals, making them a constant threat to any powered equipment or settlements.",
+      abilities: ["Toxic Paralysis", "Swarm Behavior", "Electrical Attraction"],
       weaknesses: [
-        "Temporal Anchoring",
-        "Reality Stabilization",
-        "Direct Chronium Contact",
+        "Chemical Neutralizers",
+        "Freezing Temperatures",
+        "Coordinated Dispersal",
       ],
       tactics:
-        "Use Time Sight to track their movements across timelines. Temporal Anchors can force them into a single timeline where they become vulnerable.",
-      variants: ["Shade", "Phantom", "Revenant"],
+        "Use chemical dispersal agents to break up swarms. Create temperature barriers with heating/cooling systems. Coordinate with other survivors for mass dispersal efforts.",
+      variants: ["Scout Swarm", "Dense Cloud", "Mega Swarm"],
     },
     {
-      name: "The Paradox King",
-      type: "Corrupted Chronarch",
+      name: "Viktor Kane",
+      type: "Syndicate Overlord",
       threat: "Boss",
       icon: Crown,
       color: "from-purple-500 to-pink-500",
-      description: "Former Chronarch consumed by temporal power",
+      description: "Ruthless leader of the Abyssal Syndicate",
       fullDescription:
-        "Once Dr. Sarah Chen, the Institute's most promising Chronarch, the Paradox King was transformed when she tried to contain the initial temporal cascade. Now existing in a state of constant temporal flux, she leads the Time Wraiths with a twisted sense of justice. She believes that by consuming all temporal energy, she can reset reality to before the cascade occurred. Her mastery of time rivals your own, making her incredibly dangerous.",
+        "Viktor Kane is a pre-flood corporate executive who has built an underwater empire through exploitation and violence. Operating from his fortress in the drowned Statue of Liberty, he controls vast territories and enslaves survivor communities. His personal power armor is equipped with the most advanced pre-flood technology, making him nearly invincible in direct combat. He must be defeated through strategy, alliances, and exploiting his overconfidence.",
       abilities: [
-        "Master Time Control",
-        "Wraith Command",
-        "Temporal Corruption",
+        "Advanced Power Armor",
+        "Corporate Resources",
+        "Military Command",
       ],
-      weaknesses: ["Emotional Appeals", "Temporal Overload", "Pure Intent"],
+      weaknesses: ["Overconfidence", "Resource Dependency", "Betrayal"],
       tactics:
-        "This is a battle of temporal mastery. Counter her abilities with your own, use the environment to your advantage, and remember her human past to break through the corruption.",
-      variants: ["First Form", "Corrupted Form", "Final Form"],
+        "Unite survivor colonies against him, sabotage his supply lines, and use his corporate mindset against him. The final battle requires combined assault from multiple allied factions.",
+      variants: ["Suited Form", "Power Armor", "Desperate Last Stand"],
     },
     {
-      name: "Temporal Architect",
-      type: "Master Antagonist",
+      name: "The Leviathan",
+      type: "Ancient Guardian",
       threat: "Final Boss",
-      icon: Clock,
+      icon: Skull,
       color: "from-black to-gray-500",
-      description: "The orchestrator of the temporal cascade",
+      description: "The ancient ruler of the ocean depths",
       fullDescription:
-        "Dr. Marcus Blackwood has transcended normal existence, becoming a being of pure temporal energy contained within a sophisticated mechanical form. He controls vast portions of the fractured timeline from his fortress and can rewrite reality around him. His goal is to become the sole master of time, reshaping all existence according to his vision. He possesses every temporal ability you have, but amplified to godlike levels.",
-      abilities: [
-        "Reality Manipulation",
-        "Timeline Control",
-        "Temporal Omnipresence",
-      ],
-      weaknesses: ["Overconfidence", "Temporal Paradoxes", "Combined Assault"],
+        "The Leviathan is an primordial creature that has slumbered in the deepest trenches for millennia. Humanity's intrusion into its domain has awakened it, and it sees all surface dwellers as a contamination to be cleansed. Larger than any whale, with intelligence beyond human comprehension and control over all sea life, it represents the ocean's final judgment on humanity's fitness to survive in the depths.",
+      abilities: ["Control Sea Life", "Immense Size", "Ancient Wisdom"],
+      weaknesses: ["Ancient Pacts", "Environmental Balance", "Respect"],
       tactics:
-        "This final confrontation requires mastery of all your abilities and the help of your allies. Use the Restoration Protocol while your team distracts him, and exploit his emotional attachment to his original timeline.",
-      variants: ["Human Form", "Temporal Form", "Pure Energy"],
+        "This is not a battle to win through violence, but through proving humanity's worth to coexist with the ocean. Show environmental stewardship, unite all survivor factions, and demonstrate that humans can live in harmony with the sea.",
+      variants: ["Awakening", "Judgment", "Final Test"],
     },
   ];
 
   const combatMechanics = [
     {
-      title: "Temporal Combat System",
+      title: "Underwater Combat System",
       description:
-        "Time-based combat where timing and strategy matter more than reflexes",
+        "Three-dimensional combat where positioning and environment matter most",
       features: [
-        "Turn-based temporal phases",
-        "Ability combinations",
-        "Environmental interactions",
+        "3D movement mechanics",
+        "Equipment management",
+        "Environmental tactics",
       ],
     },
     {
-      title: "Weakness Exploitation",
+      title: "Creature Behavior",
       description:
-        "Every enemy has temporal vulnerabilities to discover and exploit",
+        "Every creature has unique weaknesses and behavior patterns to learn",
       features: [
-        "Elemental weaknesses",
-        "Timing windows",
-        "Behavioral patterns",
+        "Territorial boundaries",
+        "Pack dynamics",
+        "Attraction/repulsion factors",
       ],
     },
     {
-      title: "Dynamic Difficulty",
+      title: "Survival Focus",
       description:
-        "Combat adapts to your playstyle and mastery of temporal abilities",
+        "Combat emphasizes survival and resource conservation over aggression",
       features: [
-        "Skill-based scaling",
-        "Tactical challenges",
-        "Puzzle integration",
+        "Stealth and avoidance",
+        "Environmental solutions",
+        "Alliance building",
       ],
     },
   ];
@@ -180,12 +172,12 @@ const EnemyShowcase = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
-            Enemies of Time
+            Denizens of the Deep
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Face diverse adversaries born from temporal chaos. Each enemy type
-            requires different strategies and mastery of your temporal abilities
-            to defeat.
+            Face diverse sea creatures and hostile factions that rule the
+            underwater world. Each threat requires different survival strategies
+            and mastery of underwater combat to overcome.
           </p>
         </motion.div>
 
