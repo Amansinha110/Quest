@@ -7,14 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Clock,
-  RotateCcw,
-  Pause,
-  FastForward,
-  Zap,
-  Shield,
-} from "lucide-react";
+import { Clock, Hammer, Shield, Fish, Zap, Droplets } from "lucide-react";
 import { useState } from "react";
 
 const GameMechanics = () => {
@@ -22,101 +15,98 @@ const GameMechanics = () => {
 
   const abilities = [
     {
-      id: "rewind",
-      name: "Temporal Rewind",
-      icon: RotateCcw,
+      id: "oxygen",
+      name: "Oxygen Management",
+      icon: Droplets,
       color: "from-blue-500 to-cyan-500",
       description:
-        "Reverse time by up to 10 seconds to undo mistakes or reset enemy positions",
+        "Monitor and conserve your air supply while exploring underwater environments",
       details:
-        "Perfect for puzzle solving and combat recovery. Watch as objects, enemies, and environmental changes flow backward in time.",
-      usage: "Hold to charge, release to rewind",
+        "Manage multiple oxygen sources including tanks, air pockets, and crafted breathing apparatus. Different activities consume oxygen at varying rates.",
+      usage: "Passive monitoring, active conservation",
     },
     {
-      id: "pause",
-      name: "Chronos Pause",
-      icon: Pause,
+      id: "crafting",
+      name: "Advanced Crafting",
+      icon: Hammer,
       color: "from-purple-500 to-indigo-500",
       description:
-        "Freeze time completely while you remain mobile and plan your next move",
+        "Create essential tools, weapons, and shelter components from scavenged materials",
       details:
-        "Stop projectiles mid-air, walk through laser grids, and analyze complex situations while the world stands still.",
-      usage: "Tap to freeze, limited duration",
+        "Combine resources to craft diving gear, underwater weapons, building materials, and survival tools. Advanced blueprints unlock complex constructions.",
+      usage: "Access crafting interface",
     },
     {
-      id: "accelerate",
-      name: "Time Acceleration",
-      icon: FastForward,
+      id: "exploration",
+      name: "Deep Sea Exploration",
+      icon: Fish,
       color: "from-orange-500 to-red-500",
       description:
-        "Speed up time to make slow processes happen instantly or move at superhuman speed",
+        "Navigate treacherous underwater terrain and discover hidden locations",
       details:
-        "Accelerate plant growth, speed up machinery, or become a blur to enemies. The world moves in slow motion around you.",
-      usage: "Channel energy to accelerate",
+        "Use sonar mapping, underwater vehicles, and specialized diving equipment to explore the ocean depths safely and efficiently.",
+      usage: "Navigate using equipment",
     },
     {
-      id: "echo",
-      name: "Temporal Echo",
-      icon: Zap,
-      color: "from-green-500 to-teal-500",
-      description:
-        "Create time-shifted copies of yourself that repeat your past actions",
-      details:
-        "Record a sequence of actions, then replay them while performing new ones. Essential for multi-person puzzles.",
-      usage: "Record and replay sequences",
-    },
-    {
-      id: "shield",
-      name: "Chrono Shield",
+      id: "construction",
+      name: "Shelter Building",
       icon: Shield,
+      color: "from-green-500 to-teal-500",
+      description: "Construct underwater habitats and defensive structures",
+      details:
+        "Build pressurized shelters, defensive barriers, and automated systems. Structures provide safety, storage, and advanced crafting capabilities.",
+      usage: "Place and upgrade structures",
+    },
+    {
+      id: "weather",
+      name: "Weather Systems",
+      icon: Zap,
       color: "from-yellow-500 to-amber-500",
       description:
-        "Create a temporal barrier that deflects attacks back through time",
+        "Adapt to dynamic underwater weather patterns and ocean currents",
       details:
-        "Redirect enemy attacks to hit them in the past, or create temporal loops that trap projectiles.",
-      usage: "Defensive temporal manipulation",
+        "Monitor underwater storms, thermal vents, toxic algae blooms, and shifting currents that affect visibility, movement, and safety.",
+      usage: "Environmental awareness",
     },
     {
-      id: "vision",
-      name: "Time Sight",
+      id: "scanning",
+      name: "Resource Scanning",
       icon: Clock,
       color: "from-pink-500 to-purple-500",
       description:
-        "See temporal echoes of past and future events in the environment",
+        "Identify valuable resources and analyze environmental threats",
       details:
-        "Reveal hidden paths, predict enemy movements, and understand the temporal history of objects and locations.",
-      usage: "Passive ability with active focus",
+        "Use advanced scanning technology to locate rare materials, identify creature behavior patterns, and assess structural integrity of ruins.",
+      usage: "Scan objects and environment",
     },
   ];
 
   const mechanicsFeatures = [
     {
-      title: "Puzzle Integration",
-      description:
-        "Every time power is designed to solve specific puzzle types",
+      title: "Resource Management",
+      description: "Every resource is precious in the underwater world",
       points: [
-        "Multi-temporal sequences",
-        "Causality loops",
-        "Synchronized timing challenges",
+        "Oxygen conservation strategies",
+        "Material scavenging priorities",
+        "Energy efficient crafting",
       ],
     },
     {
-      title: "Combat Synergy",
-      description:
-        "Combine abilities for devastating temporal combat techniques",
+      title: "Environmental Hazards",
+      description: "Adapt to the ever-changing dangers of the deep ocean",
       points: [
-        "Rewind + Echo combos",
-        "Pause + Acceleration chains",
-        "Predictive Time Sight strikes",
+        "Pressure zone navigation",
+        "Creature behavior patterns",
+        "Weather system responses",
       ],
     },
     {
-      title: "Environmental Interaction",
-      description: "Time affects everything in the world differently",
+      title: "Base Building",
+      description: "Construct and expand your underwater civilization",
       points: [
-        "Temporal-sensitive materials",
-        "Age-based transformations",
-        "Time-locked mechanisms",
+        "Modular shelter systems",
+        "Automated resource gathering",
+        "Defensive fortifications",
       ],
     },
   ];
@@ -132,12 +122,12 @@ const GameMechanics = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-            Time Manipulation Abilities
+            Underwater Survival Systems
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Master six unique temporal powers, each with distinct mechanics and
-            strategic applications. Combine abilities to create powerful
-            synergies and solve increasingly complex challenges.
+            Master six essential survival mechanics, each crucial for thriving
+            in the depths. Combine systems strategically to overcome
+            environmental challenges and build thriving underwater colonies.
           </p>
         </motion.div>
 
@@ -248,12 +238,12 @@ const GameMechanics = () => {
           className="text-center bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-lg p-8 border border-cyan-500/20"
         >
           <h3 className="text-3xl font-bold text-white mb-4">
-            Ready to Experience Time Manipulation?
+            Ready to Dive Into Survival?
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Try our interactive demonstration to feel the power of controlling
-            time. Practice the core mechanics and discover how they combine to
-            create endless possibilities.
+            Experience our interactive demonstration to understand the core
+            survival mechanics. Practice resource management, crafting, and
+            exploration in a safe environment.
           </p>
           <Button
             size="lg"
