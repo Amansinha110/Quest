@@ -25,19 +25,20 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
   const features = [
     {
       icon: Clock,
-      title: "Master Time",
-      description: "Rewind, pause, or accelerate time to solve complex puzzles",
+      title: "Oxygen Management",
+      description:
+        "Carefully manage your air supply while exploring the depths",
     },
     {
       icon: Zap,
-      title: "Combat System",
-      description: "Use temporal abilities to outmaneuver and defeat enemies",
+      title: "Craft & Build",
+      description: "Create weapons, tools, and underwater shelters to survive",
     },
     {
       icon: Shield,
-      title: "Deep Story",
+      title: "Deep Ocean",
       description:
-        "Uncover the mysteries of a world where time itself is broken",
+        "Explore the mysteries of a post-apocalyptic underwater world",
     },
   ];
 
@@ -81,7 +82,7 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
             animate={controls}
           >
             <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-600 bg-clip-text text-transparent">
-              ChronoQuest
+              Depth Survivor
             </span>
           </motion.h1>
 
@@ -92,7 +93,7 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-2xl md:text-3xl mb-8 text-gray-300"
           >
-            Master Time. Solve Mysteries. Save Reality.
+            Survive. Explore. Reclaim the Depths.
           </motion.h2>
 
           {/* Description */}
@@ -102,11 +103,11 @@ const GameHero = ({ onNavigate }: GameHeroProps) => {
             transition={{ duration: 1, delay: 0.6 }}
             className="text-lg md:text-xl mb-12 text-gray-400 max-w-3xl mx-auto leading-relaxed"
           >
-            Enter a world where time itself has shattered. As the last
-            Chronarch, you possess the power to manipulate temporal flows. Use
-            your abilities to solve mind-bending puzzles, defeat time-corrupted
-            enemies, and restore the fabric of reality in this visually stunning
-            adventure.
+            Humanity has been forced beneath the ocean due to catastrophic
+            climate events. As one of the last surface dwellers, you must learn
+            to survive in the depths. Scavenge for resources, build underwater
+            shelters, craft essential equipment, and defend yourself from
+            dangerous deep-sea creatures in this immersive survival adventure.
           </motion.p>
 
           {/* Action Buttons */}
