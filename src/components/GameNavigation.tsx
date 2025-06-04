@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Clock, Zap, Target, BookOpen, Image, Play } from "lucide-react";
+import { Waves, Zap, Target, BookOpen, Image, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface GameNavigationProps {
@@ -16,10 +16,10 @@ const GameNavigation = ({
 
   const navItems = [
     { id: "hero", label: "Game Overview", icon: Play },
-    { id: "mechanics", label: "Time Mechanics", icon: Clock },
+    { id: "mechanics", label: "Survival Mechanics", icon: Waves },
     { id: "story", label: "Storyline", icon: BookOpen },
     { id: "world", label: "World Gallery", icon: Image },
-    { id: "enemies", label: "Enemies", icon: Target },
+    { id: "enemies", label: "Sea Creatures", icon: Target },
     { id: "demo", label: "Interactive Demo", icon: Zap },
   ];
 
@@ -37,9 +37,9 @@ const GameNavigation = ({
             whileHover={{ scale: 1.05 }}
           >
             <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center">
-              <Clock className="w-5 h-5 text-white" />
+              <Waves className="w-5 h-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-white">ChronoQuest</span>
+            <span className="text-xl font-bold text-white">Depth Survivor</span>
           </motion.div>
 
           {/* Desktop Navigation */}
