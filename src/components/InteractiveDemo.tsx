@@ -275,7 +275,7 @@ const InteractiveDemo = () => {
   return (
     <section
       id="demo"
-      className="min-h-screen bg-gradient-to-b from-black via-green-900/20 to-black py-20 px-4"
+      className="min-h-screen bg-gradient-to-b from-black via-red-900/20 to-black py-20 px-4"
     >
       <div className="container mx-auto max-w-6xl">
         {/* Header */}
@@ -285,7 +285,7 @@ const InteractiveDemo = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent">
+          <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
             Interactive Demo
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -298,20 +298,20 @@ const InteractiveDemo = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Game Arena */}
           <div className="lg:col-span-2">
-            <Card className="bg-black/50 border-green-500/30 overflow-hidden">
+            <Card className="bg-black/50 border-red-500/30 overflow-hidden">
               <CardContent className="p-0">
                 {/* Score and Status */}
-                <div className="bg-gradient-to-r from-green-900/50 to-cyan-900/50 p-4 border-b border-green-500/30">
+                <div className="bg-gradient-to-r from-red-900/50 to-pink-900/50 p-4 border-b border-red-500/30">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-6">
                       <div>
-                        <span className="text-green-400 text-sm">Score</span>
+                        <span className="text-red-400 text-sm">Score</span>
                         <div className="text-white text-2xl font-bold">
                           {score}
                         </div>
                       </div>
                       <div>
-                        <span className="text-cyan-400 text-sm">Combo</span>
+                        <span className="text-pink-400 text-sm">Combo</span>
                         <div className="text-white text-2xl font-bold">
                           x{combo}
                         </div>
@@ -322,7 +322,7 @@ const InteractiveDemo = () => {
                         {isPlaying ? "Time Flowing" : "Time Paused"}
                       </Badge>
                       {currentAbility && (
-                        <Badge className="bg-green-500 text-white pulse-glow">
+                        <Badge className="bg-red-500 text-white pulse-glow">
                           {abilities.find((a) => a.id === currentAbility)?.name}{" "}
                           Active
                         </Badge>
@@ -338,14 +338,14 @@ const InteractiveDemo = () => {
                     {[...Array(10)].map((_, i) => (
                       <div
                         key={i}
-                        className="absolute border-l border-green-500/20"
+                        className="absolute border-l border-red-500/20"
                         style={{ left: `${i * 10}%`, height: "100%" }}
                       />
                     ))}
                     {[...Array(10)].map((_, i) => (
                       <div
                         key={i}
-                        className="absolute border-t border-green-500/20"
+                        className="absolute border-t border-red-500/20"
                         style={{ top: `${i * 10}%`, width: "100%" }}
                       />
                     ))}
@@ -401,11 +401,11 @@ const InteractiveDemo = () => {
                 </div>
 
                 {/* Controls */}
-                <div className="p-4 bg-black/30 border-t border-green-500/30">
+                <div className="p-4 bg-black/30 border-t border-red-500/30">
                   <div className="flex items-center justify-center space-x-4">
                     <Button
                       onClick={() => setIsPlaying(!isPlaying)}
-                      className="bg-green-500 hover:bg-green-600 text-white"
+                      className="bg-red-500 hover:bg-red-600 text-white"
                     >
                       {isPlaying ? (
                         <Pause className="w-4 h-4 mr-2" />
@@ -431,10 +431,10 @@ const InteractiveDemo = () => {
 
           {/* Abilities Panel */}
           <div className="space-y-6">
-            <Card className="bg-black/50 border-cyan-500/30">
+            <Card className="bg-black/50 border-red-500/30">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-4 flex items-center">
-                  <Clock className="w-5 h-5 mr-2 text-cyan-400" />
+                  <Clock className="w-5 h-5 mr-2 text-red-400" />
                   Temporal Abilities
                 </h3>
 
@@ -472,7 +472,7 @@ const InteractiveDemo = () => {
             </Card>
 
             {/* Challenges */}
-            <Card className="bg-black/50 border-yellow-500/30">
+            <Card className="bg-black/50 border-pink-500/30">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-4">
                   Demo Challenges
@@ -481,14 +481,14 @@ const InteractiveDemo = () => {
                   {challenges.map((challenge, index) => (
                     <div
                       key={challenge.name}
-                      className="flex items-center justify-between p-2 bg-yellow-500/10 rounded"
+                      className="flex items-center justify-between p-2 bg-pink-500/10 rounded"
                     >
                       <span className="text-gray-300 text-sm">
                         {challenge.name}
                       </span>
                       <Badge
                         variant="outline"
-                        className="text-yellow-400 border-yellow-400"
+                        className="text-pink-400 border-pink-400"
                       >
                         {challenge.points}pts
                       </Badge>
@@ -499,28 +499,28 @@ const InteractiveDemo = () => {
             </Card>
 
             {/* Tips */}
-            <Card className="bg-black/50 border-blue-500/30">
+            <Card className="bg-black/50 border-rose-500/30">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-4">Pro Tips</h3>
                 <div className="space-y-3 text-sm text-gray-300">
                   <div className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0" />
                     <span>
                       Use Scan to locate valuable resources and identify threats
                     </span>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-purple-400 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-pink-400 rounded-full mt-2 flex-shrink-0" />
                     <span>
                       Craft items by combining resources strategically
                     </span>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-orange-400 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-rose-400 rounded-full mt-2 flex-shrink-0" />
                     <span>Manage oxygen carefully - it's your lifeline</span>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0" />
+                    <div className="w-2 h-2 bg-red-300 rounded-full mt-2 flex-shrink-0" />
                     <span>
                       Avoid or distract dangerous creatures to survive
                     </span>
@@ -536,7 +536,7 @@ const InteractiveDemo = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="mt-16 text-center bg-gradient-to-r from-green-500/10 to-cyan-500/10 rounded-lg p-8 border border-green-500/20"
+          className="mt-16 text-center bg-gradient-to-r from-red-500/10 to-pink-500/10 rounded-lg p-8 border border-red-500/20"
         >
           <h3 className="text-3xl font-bold text-white mb-4">
             Full Game Features
@@ -559,7 +559,7 @@ const InteractiveDemo = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-green-500/20 rounded-lg p-3 text-green-300 font-semibold"
+                className="bg-red-500/20 rounded-lg p-3 text-red-300 font-semibold"
               >
                 {feature}
               </motion.div>
